@@ -1,0 +1,17 @@
+$ ./C
+Enter i: -10
+Enter j: 10
+randInt(i,j): 3
+$ ./C
+Enter i: -10
+Enter j: 0
+randInt(i,j): -1
+$ ./C
+Enter i: -10
+Enter j: -5
+randInt(i,j): -10
+$ ./C
+Enter i: -10
+Enter j: -5
+randInt(i,j): -6
+
