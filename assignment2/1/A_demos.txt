@@ -1,0 +1,13 @@
+$ g++ -Wall -g A.cpp -o A
+$ ./A
+Enter i: 7
+F(7) = 21
+isqrt(7) = 2
+sqrt(7) = 2.64575
+Enter i: 9
+F(9) = 55
+isqrt(9) = 3
+sqrt(9) = 3
+Enter i: -2
+Can't handle negative input, so quitting.
+

@@ -1,0 +1,159 @@
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ #A1
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ g++ -Wall -g A.cpp -o A
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 0
+1
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 5
+8
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 10
+89
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 15
+987
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 20
+10946
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 25
+121393
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 30
+1346269
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 35
+14930352
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 40
+165580141
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 45
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 50
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 55
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 60
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 100
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 1000
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 10000
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 100000
+^C
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ ./A 1000000
+Segmentation fault
+
+
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ #A2
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ uname -a
+Linux russ-Satellite-L305 3.5.0-17-generic #28-Ubuntu SMP Tue Oct 9 19:32:08 UTC 2012 i686 i686 i686 GNU/Linux
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 0
+1
+
+real	0m0.002s
+user	0m0.004s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 5
+8
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 10
+89
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 15
+987
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 20
+10946
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 25
+121393
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 30
+1346269
+
+real	0m0.035s
+user	0m0.024s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 35
+14930352
+
+real	0m0.274s
+user	0m0.256s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 40
+165580141
+
+real	0m2.914s
+user	0m2.832s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 45
+1836311903
+
+real	0m34.061s
+user	0m31.634s
+sys	0m0.020s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 50
+^C
+
+real	4m53.618s
+user	4m40.194s
+sys	0m0.252s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 40
+165580141
+
+real	0m2.931s
+user	0m2.836s
+sys	0m0.004s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 41
+267914296
+
+real	0m4.753s
+user	0m4.600s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 42
+433494437
+
+real	0m7.661s
+user	0m7.456s
+sys	0m0.000s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 43
+701408733
+
+real	0m13.279s
+user	0m12.093s
+sys	0m0.008s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 44
+1134903170
+
+real	0m20.682s
+user	0m19.561s
+sys	0m0.008s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 45
+1836311903
+
+real	0m33.608s
+user	0m31.606s
+sys	0m0.016s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 46
+-1323752223
+
+real	0m54.283s
+user	0m51.303s
+sys	0m0.016s
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/assignment2 $ time ./A 47
+512559680
+
+real	1m32.859s
+user	1m22.921s
+sys	0m0.052s
+
+
