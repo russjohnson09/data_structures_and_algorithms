@@ -32,11 +32,11 @@ main()
 
     char value11 = *phone_chars;
 
-    int * value12 = &ip;
+    int ** value12 = &ip;
 
-    int * value13 = &pn;
+    int ** value13 = &pn;
 
-    int * value14 = &ps;
+    char ** value14 = &ps;
 
     int value15 = *&i;
 
