@@ -1,0 +1,6 @@
+1. s1 is the string "zero".
+2. &s1 is the location of s1 in memory. &s1 is string*.
+3. The type being applied is a pointer to a string. [3]=string*
+4. string* str
+5. We need to dereference str.
+6. *str
