@@ -1,0 +1,4 @@
+$g++ -g D.cpp -o D
+$./D
+invocation of |astr("zero")| successful
+invocation of |astr("infinity")| successful

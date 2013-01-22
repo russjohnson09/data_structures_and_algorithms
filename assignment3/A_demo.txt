@@ -1,0 +1,25 @@
+$#A
+$g++ -g jumble.cpp -o jumble
+jumble.cpp: In function ‘char* unscramble(const char*)’:
+jumble.cpp:22:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+$./jumble bemnrsu
+hello
+numbers
+world
+numbers
+$./jumble bemnrsu < words.txt
+numbers
+$./jumble abc < words.txt
+cab
+$./jumble indyortica < words.txt
+indicatory
+$./jumble braihes < words.txt
+bearish
+$./jumble israovu < words.txt
+
+$./jumble aet < words.txt
+eta
+$./jumble tasel < words.txt
+least
+$./jumble cramlbes < words.txt
+clambers
