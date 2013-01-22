@@ -1,28 +1,39 @@
+#include <cstdlib>
+#include <cctype>
+#include <set>
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 
-bool isMatch(char* str1, char* str2) {
-	
+multiset<char> make_set(const char* chars)
+{
+    multiset<char> key ;
+	while (*chars != '\0'){
+		key.insert(*chars);
+		++chars;
+	}
+    return key ;
 }
-	
 
-char* f(char* str1)
-{	
-	char* result = {'\0'};
+
+char* unscramble(const char* str1)
+{
+	char* result = "";
     string line;
-    while(getline(cin, line))  //input from the file in.txt
+    while(getline(cin, line))
     {
-		char * str2 = new char [str.length()+1];
-		strcpy (str2, str.c_str());
-        if (isMatch(str1, str2)) {
-			char
+		char* str2 = new char [line.length()+1];
+		strcpy (str2, line.c_str());
+        if (make_set(str1) == make_set(str2)) {
+			result = str2;
 		}
     }
+	return result;
 }
 
 int main(int argc, const char* argv[]) {
 
-	f(argv[1]);
+	cout << unscramble(argv[1]) << "\n";
 		
 }
