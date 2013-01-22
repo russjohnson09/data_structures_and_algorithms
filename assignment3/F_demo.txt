@@ -1,0 +1,27 @@
+$E1
+$g++ -g dvd.cpp -o dvd
+$./dvd
+Title: Die Hard
+Minutes: 130
+Price: 9.99
+Title: Stein's Gate
+Minutes: 120
+Price: 10.11
+Title: Bunraku
+Minutes: 121
+Price: 3.56
+Title: Die Hard
+Minutes: 130
+Price: 9.99
+Title: Stein's Gate
+Minutes: 120
+Price: 1.11
+Title: Bunraku
+Minutes: 121
+Price: 0
+Die Hard
+120
+0
+
+$E2
+
