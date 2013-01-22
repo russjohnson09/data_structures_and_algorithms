@@ -6,7 +6,7 @@ using namespace std;
 
 #define     alen(a)     (sizeof (a) / sizeof *(a))
 
-int * C(const int [], int, int);
+int * buffered_array(const int [], int, int);
 
 void display(const int *, size_t);
 
@@ -14,7 +14,7 @@ int
 main()
 {
     const int phone_digits[] = { 3, 3, 1, 2, 9, 1, 5 };
-    int * phone_digits_ = C(phone_digits, alen(phone_digits), 5);
+    int * phone_digits_ = buffered_array(phone_digits, alen(phone_digits), 5);
     display(phone_digits_, alen(phone_digits) + 5);
     cout.put('\n');
     delete [] phone_digits_;
