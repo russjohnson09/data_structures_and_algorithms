@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <string.h>
+
 using namespace std;
 
 #define     alen(a)     (sizeof (a) / sizeof *(a))
@@ -16,7 +18,7 @@ int main (int argc, const char* argv[]) {
 
 	for (int i=1; i < argc; ++i) {
 		char ch = argv[i][0];
-		if ( ch == '-' && alen(argv[i]) > 1 )
+		if ( ch == '-' && strlen(argv[i]) > 1 )
 			ch = argv[i][1];
 		switch (ch) {
 			case '0':
@@ -42,32 +44,36 @@ int main (int argc, const char* argv[]) {
 				push(pop() - op2);
 				break;
 			case '/':
-                    op2 = pop();
-                    if (op2 != 0.0)
-                        push(pop() / op2);
-                    else
-                        cerr << "error: zero divisor\n";
-                    break;
+                op2 = pop();
+                if (op2 != 0.0)
+                    push(pop() / op2);
+                else {
+                    cerr << "error: zero divisor\n";
+					exit(1);
+				}
+				break;
 			default:
-					cerr << "error: unknown command " << argv[i];
-					break;
+				cerr << "error: unknown command " << argv[i] << '\n';
+				exit(1);
 			}
 	}
-	cout << "\t" << pop();
+	cout << pop() << '\n';
 }
 
 void push(double f) {
 	if (sp < MAXVAL)
 		val[sp++] = f;
-	else
-		cerr << "error: stack full, can't push " << f;
+	else {
+		cerr << "error: stack full, can't push " << f << '\n';
+		exit(1);
+	}
 }
 
 double pop() {
 	if (sp > 0)
 		return val[--sp];
 	else {
-		cerr << "error: stack empty";
-		return 0.0;
+		cerr << "error: stack empty \n";
+		exit(1);
 	}
 }

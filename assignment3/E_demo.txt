@@ -1,0 +1,20 @@
+$#E
+$g++ -Wall -g RpCalc.cpp -o RpCalc
+$./RpCalc 24 7 +
+31
+$./RpCalc 24 7 \*
+168
+$./RpCalc 24 7 -
+17
+$./RpCalc 24 7 /
+3.42857
+$./RpCalc -24 7 +
+-17
+$./RpCalc 24 -7 +
+17
+$./RpCalc 1 2 - 4 5 + \*
+-9
+$./RpCalc 5 18 5 10 5 5 65 11 5 5 24 20 4 16 8 + + + + + + + + + + + + + +
+206
+$./RpCalc 13 +
+error: stack empty 
