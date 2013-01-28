@@ -13,12 +13,12 @@ int main()
     node *conductor;  // This will point to each node as it traverses the list
 
     root = new node;  // Sets it to actually point to something
-    root->next = 0;   //  Otherwise it would not work well
+    root->next = NULL;   //  Otherwise it would not work well
     root->x = 12;
     conductor = root; // The conductor points to the first node
 
-    if ( conductor != 0 ) { //Makes sure there is a place to start
-      while ( conductor->next != 0 ) {
+    if ( conductor != NULL ) { //Makes sure there is a place to start
+      while ( conductor->next != NULL ) {
         cout<< conductor->x;
         conductor = conductor->next;
       }
@@ -27,6 +27,6 @@ int main()
 
     conductor->next = new node;  // Creates a node at the end of the list
     conductor = conductor->next; // Points to that node
-    conductor->next = 0;         // Prevents it from going any further
+    conductor->next = NULL;         // Prevents it from going any further
     conductor->x = 42;
 }
