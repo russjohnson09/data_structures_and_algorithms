@@ -1,0 +1,24 @@
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/linked-list $ g++ -Wall -g driver.cpp -o driver
+russ@russ-Satellite-L305 ~/Desktop/data_structures_and_algorithms/linked-list $ ./driver
+Number of items in the list: 0
+
+Number of items in the list: 1
+7  
+Number of items in the list: 2
+2  7  
+Number of items in the list: 3
+5  2  7  
+8 could not be removed.
+2 was successfully removed.
+Number of items in the list: 2
+5  7  
+7 was successfully removed.
+Number of items in the list: 1
+5  
+5 was successfully removed.
+Number of items in the list: 0
+
+8 could not be removed.
+Number of items in the list: 0
+
+
