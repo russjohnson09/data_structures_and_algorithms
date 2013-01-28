@@ -1,4 +1,9 @@
-$#E1
+
+
+
+
+
+$#F1
 $g++ -g dvd.cpp -o dvd
 $./dvd
 Title: Die Hard
@@ -23,14 +28,14 @@ Die Hard
 120
 0
 
-$#E2
+$#F1
 $g++ -g dvd.cpp -o dvd
 dvd.cpp: In member function ‘void DVD::output() const’:
 dvd.cpp:10:33: error: passing ‘const DVD’ as ‘this’ argument of ‘std::string DVD::get_title()’ discards qualifiers [-fpermissive]
 dvd.cpp: In function ‘int main()’:
 dvd.cpp:33:28: error: passing ‘const DVD’ as ‘this’ argument of ‘std::string DVD::get_title()’ discards qualifiers [-fpermissive]
 
-$#E3
+$#F3
 $g++ -g dvd.cpp -o dvd
 dvd.cpp: In function ‘int main()’:
 dvd.cpp:22:17: error: passing ‘const DVD’ as ‘this’ argument of ‘void DVD::output()’ discards qualifiers [-fpermissive]

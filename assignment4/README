@@ -1,0 +1,25 @@
+Redo your DVDs program of the preceding assignment with the constructor's first argument's type being  const string &  instead of the type specified for the argument in the preceding assignment (const string), and with the method get_title() (or whatever you're calling your accessor get-method for title) having the return-type  const string & .  Then, make all the rest of your code consistent with these new features.
+Demonstrate compiling this new version and executing it (as specified in the preceding assignment for the basic, correct version of the program).
+Print your program separately from your demonstration of it.  Please don't do something like using cat to include your code with the demonstration.
+
+Collate your work for this exercise in the following order:
+
+    demo
+    dvd.h
+    dvd.cpp
+    main module 
+
+
+Here is linked-list code from CIS 163.  Convert it to C++. 
+Instead of IntegerLinkedList.toString(), have an operator<<(). 
+
+Collate your work for this exercise in the following order:
+
+    demo
+    Node.h
+    Node.cpp (if there is one)
+    IntegerLinkedList.h
+    IntegerLinkedList.cpp (if you have one)
+    main module 
+
+

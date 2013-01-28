@@ -1,3 +1,7 @@
+
+
+
+
 $#E
 $g++ -Wall -g RpCalc.cpp -o RpCalc
 $./RpCalc 24 7 +
