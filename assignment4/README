@@ -7,11 +7,11 @@ Collate your work for this exercise in the following order:
     demo
     dvd.h
     dvd.cpp
-    main module 
+    main module
 
 
 Here is linked-list code from CIS 163.  Convert it to C++. 
-Instead of IntegerLinkedList.toString(), have an operator<<(). 
+Instead of IntegerLinkedList.toString(), have an operator<<().
 
 Collate your work for this exercise in the following order:
 
