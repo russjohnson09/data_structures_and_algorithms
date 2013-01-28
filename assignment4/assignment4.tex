@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+
+%\renewcommand{\familydefault}{\ttfamily}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+\begin{document}
+
+\lstset{language=C++,
+basicstyle=\small\ttfamily,
+%basicstyle=\footnotesize,% basic font setting
+xleftmargin=-2cm,
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
+
+\begin{flushright}
+Russ Johnson\\
+Data Structures and Algorithms\\
+Assignment 4\\
+\today\\
+\end{flushright}
+
+
+\begin{verbatim}
+> g++ -Wall -g A.cpp -o A
+> ./A
+Title: Die Hard
+Minutes: 130
+Price: 9.99
+Title: Stein's Gate
+Minutes: 120
+Price: 10.11
+Title: Bunraku
+Minutes: 121
+Price: 3.56
+Title: Die Hard
+Minutes: 130
+Price: 9.99
+Title: Stein's Gate
+Minutes: 120
+Price: 1.11
+Title: Bunraku
+Minutes: 121
+Price: 0
+Die Hard
+120
+0
+
+\end{verbatim}
+\newpage
+\lstinputlisting[language=C++]{./dvd.h}
+\newpage
+\lstinputlisting[language=C++]{./dvd.cpp}
+\newpage
+\lstinputlisting[language=C++]{./A.cpp}
+\newpage
+\begin{verbatim}
+> g++ -Wall -g driver.cpp -o driver
+> ./driver
+Number of items in the list: 0
+
+Number of items in the list: 1
+7  
+Number of items in the list: 2
+2  7  
+Number of items in the list: 3
+5  2  7  
+8 could not be removed.
+2 was successfully removed.
+Number of items in the list: 2
+5  7  
+7 was successfully removed.
+Number of items in the list: 1
+5  
+5 was successfully removed.
+Number of items in the list: 0
+
+8 could not be removed.
+Number of items in the list: 0
+
+\end{verbatim}
+\newpage
+
+\lstinputlisting[language=C++]{./linked-list/Node.h}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/LinkedList.h}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/LinkedList.cpp}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/driver.cpp}
+\end{document}

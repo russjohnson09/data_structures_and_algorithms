@@ -1,5 +1,6 @@
 #ifndef INTEGERNODE_H
 #define INTEGERNODE_H
+#include "IntegerNode.h"
 
 class IntegerLinkedList {
     IntegerNode head;

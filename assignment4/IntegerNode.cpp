@@ -1,59 +1,42 @@
-/* The IntegerNode class
-   Anderson, Franceschi
-*/
+#include <iostream>
 
-public class IntegerNode
-{
-  private int data;
-  private IntegerNode next;
+using namespace std;
 
-  /** default constructor
-  *   sets data to 0, and next to null
-  */
-  public IntegerNode( )
-  {
-    data = 0;
-    next = null;
-  }
+class IntegerNode {
+    int data;
+    IntegerNode* next;
 
-  /** overloaded constructor
-  *   @param   newData  data value
-  */
-  public IntegerNode( int  newData )
-  {
-    setData( newData );
-    next = null;
-  }
+  public:
+    IntegerNode() {data = 0; next = NULL;}
+    IntegerNode(int newData) {data = newData;}
+    int getData() {return data;}
+    IntegerNode* getNext() {return next;}
+    void setData(int newData) {data = newData;}
+    void setNext(IntegerNode* nd) {next = nd;}
 
-  /** accessor for data
-  *   @return   the value of the node
-  */
-  public int getData( )
-  {
-    return data;
-  }
+  };
 
-  /** accessor for next
-  *   @return   the reference to the next node
-  */
-  public IntegerNode getNext( )
-  {
-    return next;
-  }
+int main() {
 
-  /** mutator for data
-  *   @param    newData   the new value for the node
-  */
-  public void setData( int newData )
-  {
-    data = newData;
-  }
+    IntegerNode *root;       // This won't change, or we would lose the list in memory
+    IntegerNode *conductor;  // This will point to each node as it traverses the list
 
-  /** mutator for next
-  *   @param    nd   the new value for next
-  */
-  public void setNext( IntegerNode  nd )
-  {
-    next = nd;
-  }
+    root = new IntegerNode;  // Sets it to actually point to something
+    root->next = NULL;   //  Otherwise it would not work well
+    root->x = 12;
+    conductor = root; // The conductor points to the first node
+
+    if ( conductor != NULL ) { //Makes sure there is a place to start
+      while ( conductor->next != NULL ) {
+        cout<< conductor->x;
+        conductor = conductor->next;
+      }
+      cout<< conductor->x << '\n';
+    }
+
+    conductor->next = new IntegerNode;  // Creates a node at the end of the list
+    conductor = conductor->next; // Points to that node
+    conductor->next = NULL;         // Prevents it from going any further
+    conductor->x = 42;
+
 }

@@ -1,3 +1,4 @@
+//LinkedList.h
 class LinkedList{
     Node *head;
     int numberOfItems;
