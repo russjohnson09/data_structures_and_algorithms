@@ -12,10 +12,10 @@ class DVD {
     double price;
 
   public:
-    DVD(const string t, int m, double p);
+    DVD(const string &t, int m, double p);
     void output() const;
     void changeprice(double p_new);
-	string get_title() const {return title;}
+	const string & get_title() const {return title;}
 	const int get_minutes() const {return minutes;}
 	const double get_price() const {return price;}
   };
