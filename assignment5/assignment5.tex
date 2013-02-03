@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper]{article}
+
+%\renewcommand{\familydefault}{\ttfamily}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+\begin{document}
+
+\lstset{language=C++,
+basicstyle=\small\ttfamily,
+%basicstyle=\footnotesize,% basic font setting
+xleftmargin=-2cm,
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
+
+\begin{flushright}
+Russ Johnson\\
+Data Structures and Algorithms\\
+Assignment 5\\
+\today\\
+\end{flushright}
+\begin{verbatim}
+4.8 
+prefix: - * * a b + c d e
+infix: ((a*b)*(c+d)) - e
+postfix: a b * c d + * e -
+\end{verbatim}
+\newpage
+\end{document}
+
+\lstinputlisting[language=C++]{./linked-list/Node.h}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/LinkedList.h}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/LinkedList.cpp}
+\newpage
+\lstinputlisting[language=C++]{./linked-list/driver.cpp}
