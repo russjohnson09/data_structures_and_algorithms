@@ -1,10 +1,13 @@
 \documentclass[11pt,a4paper]{article}
 
+%\usepackage[margin=0.5in]{geometry}
+
 %\renewcommand{\familydefault}{\ttfamily}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{xcolor}
 
+\pagestyle{empty}
 \begin{document}
 
 \lstset{language=C++,
@@ -21,13 +24,118 @@ Data Structures and Algorithms\\
 Assignment 5\\
 \today\\
 \end{flushright}
+A.\\
+2.31 The binary search will still work. The difference is that it will include the middle element in the next search, which we already know is not the element we are looking for. It has the same big-Oh notation and will not run noticeably slower.\\
+~\\
+C\\
+4.8\\
+prefix: $- * * a b + c d e$\\
+infix: $((a*b)*(c+d)) - e$\\
+postfix: $a b * c d + * e -$\\
+\newpage
+
+	\addtolength{\topmargin}{-1in}
+%	\addtolength(\bottommargin}{-.875in}
+    \addtolength{\textheight}{3in}
+
 \begin{verbatim}
-4.8 
-prefix: - * * a b + c d e
-infix: ((a*b)*(c+d)) - e
-postfix: a b * c d + * e -
+Maze 1
+###########
+#.........#
+#.##### #.#
+..  #   #.#
+### # ###.#
+#     #...#
+# # ###.###
+# #   #....
+# ### # # #
+#     #   #
+###########
+
+Maze 2
+#####################
+#     #     #   #   #
+# # # # ### # # # # #
+# #   # #   #   # # #
+# ##### # ####### # #
+#     # #       #   #
+##### # ####### ### #
+#   #   #     #   # #
+# # ##### ### # # # #
+# #       #   # #   #
+# ##### ### ### ### #
+#     #   # #       #
+### # ### # # # #####
+..  # #   # # #     #
+#.### # ### # ### # #
+#...  #     #   # # #
+###.######### # # # #
+#...#...#...# #   # #
+#.###.#.#.#.# ##### #
+#.....#...#..........
+#####################
 \end{verbatim}
 \newpage
+\begin{verbatim}
+Maze 3
+#########################################
+#     #       #       #         #   #   #
+# # # # # ### # ### # # ####### # # # # #
+#   # # # #   #     # #       #     # # #
+# ### # # # # # ##### ##### # ####### # #
+# #   # #   # # #   #     #   #       #..
+# # # # ##### # # # # ### ##### # #####.#
+#   # #       # # #   #   #   # # #.....#
+# ### ### ##### # ##### ### # # # #.# ###
+# #       #   # # #     #   # # # #.#   #
+# # # ##### # # # # ##### ### # # #.### #
+# # #     #     # # #       #   # #.    #
+# # ##### ####### # # ### # ##### #.#####
+# #   #       #   # #     #       #.#...#
+# ### # ##### # ### ### ##### #####.#.#.#
+#   # # #     #     #   #   #     #...#.#
+# # # # # ### ####### ### # ##### #####.#
+# # #   #     #         #   #...........#
+# # ########### # ##### #####.### ##### #
+# #       #   #   #   #.......  #     # #
+# ####### # # ##### # #.####### ##### # #
+#         #   #...#   #...#         #   #
+##### ### #####.#.#######.# ####### #####
+#   #   # #.....#...#.....  #     # #   #
+# # ### # #.### # #.#.####### # # # # # #
+#   #   # #.#   # #...    #   #   # #   #
+##### # # #.# ### ### ### # ####### #####
+#   #   # #.#   #   # #   #   #   # #   #
+# # ##### #.### # # # # # ### # # # # # #
+# # #     #.#   # # #   # #   # #   # # #
+# # # ### #.# # # # ##### # ### ##### # #
+# # # #   #.# #     #   # #   # #     # #
+# # # # ###.# ####### # # ### # # ##### #
+# #   # #...#     #   # #   # # #     # #
+# ##### #.####### # # # ### # # ##### # #
+#   #...#.  #   # # # #   #   #     #   #
+### #.#.#.# # # # # # ### ####### # #####
+#   #.#...#     # # #   # #     # #     #
+# ###.########### # ### # # # # # # ### #
+......            #       #   #   #     #
+#########################################
+
+Maze 4
+###########
+#         #
+#         #
+..        #
+#.        #
+#.        #
+#.        #
+#..........
+#         #
+#         #
+###########
+\end{verbatim}
+    \addtolength{\textheight}{-2in}
+\newpage
+\lstinputlisting[language=C++]{./maze.cpp}
 \end{document}
 
 \lstinputlisting[language=C++]{./linked-list/Node.h}
