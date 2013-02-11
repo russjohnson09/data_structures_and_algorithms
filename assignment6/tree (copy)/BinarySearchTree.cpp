@@ -46,19 +46,19 @@ class BinarySearchTree {
     }
 
     bool isBST() {
-          return(isBSTUtil(root, INT_MIN, INT_MAX));
+          return(isBSTUtil(root, NULL, NULL));
         }
 
-    bool isBSTUtil(struct BinaryNode<Comparable>* t, int min, int max)
+    bool isBSTUtil(BinaryNode<Comparable>* t, Comparable* min, Comparable* max)
     {
       if (t==NULL)
          return true;
-      if (t->data < min || t->data > max)
+      if ((min !=NULL && t->data < *min) || (max !=NULL && *max < t->data))
          return 0; 
       return
-        isBSTUtil(t->left, min, t->data) &&
-        isBSTUtil(t->right, t->data, max);
-    } 
+        isBSTUtil(t->left, min, &(t->data)) &&
+        isBSTUtil(t->right, &(t->data), max);
+    }
 
     
 
@@ -138,7 +138,7 @@ int main() {
         )
         );
 
-    BinarySearchTree<string> bt5     // only a binary tree, not a BST
+    BinarySearchTree<string> bt5
         (
         new BinaryNode<string>("Lee",
                 new BinaryNode<string>("Christie",
@@ -151,6 +151,27 @@ int main() {
                         )
                 )
         );
+
+    BinarySearchTree<string> bt6
+        (
+        new BinaryNode<string>("D",
+            new BinaryNode<string>("B",
+                new BinaryNode<string>("A",NULL,NULL),
+                new BinaryNode<string>("C",NULL,NULL)
+                ),
+            new BinaryNode<string>("F",
+                new BinaryNode<string>("E",NULL,NULL),
+                NULL
+            )
+        )
+    );
+
+    cout << bt.isBST();
+    cout << bt2.isBST();
+    cout << bt3.isBST();
+    cout << bt4.isBST();
+    cout << bt5.isBST();
+    cout << bt6.isBST();
 
 
 }

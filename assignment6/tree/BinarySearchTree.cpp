@@ -481,3 +481,18 @@ int BinarySearchTree<Comparable>::fullNodes( const BinaryNode<Comparable> * t ) 
 }
 
 
+template <class Comparable>
+bool BinarySearchTree<Comparable>::isBST() const {
+          return(isBSTUtil(root, NULL, NULL));
+}
+
+template <class Comparable>
+bool BinarySearchTree<Comparable>::isBSTUtil(BinaryNode<Comparable>* t, Comparable* min, Comparable* max) const {
+    if (t==NULL)
+       return true;
+    if ((min !=NULL && t->element < *min) || (max !=NULL && *max < t->element))
+       return 0; 
+    return isBSTUtil(t->left, min, &(t->element)) && isBSTUtil(t->right, &(t->element), max);
+}
+
+

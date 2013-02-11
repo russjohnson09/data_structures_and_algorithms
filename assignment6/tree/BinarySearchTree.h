@@ -88,8 +88,7 @@ class BinarySearchTree
     int leaves( const BinaryNode<Comparable> * t ) const;
     int fullNodes( const BinaryNode<Comparable> * t ) const;
 
-    bool isBST( const BinaryNode<Comparable> * t ) const;
-    bool isBSTUtil( const BinaryNode<Comparable> * t, Comparable min, Comparable max ) const;
+    bool isBSTUtil( BinaryNode<Comparable> * t, Comparable* min, Comparable* max ) const;
 
 };
 

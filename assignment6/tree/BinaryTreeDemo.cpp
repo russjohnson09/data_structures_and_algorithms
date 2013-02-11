@@ -8,14 +8,12 @@ using namespace std;
 
 void printTime(double);
 
-BinarySearchTree<int> balanced(int);
-
 int
 main()
 {
 
-	clock_t t;
-    int i;
+//	clock_t t;
+//    int i;
 
 
 
@@ -125,8 +123,10 @@ main()
     );
 
 
-    cout << isBST(bt);
+    cout << bt7.isBST();
     cout << '\n';
+    cout << bt.isBST();
+    cout << bt2.isBST();
     cout << '\n';
 
     bt.printTree_inorder();
@@ -146,10 +146,6 @@ main()
     cout << '\n';
 
 
-}
-
-bool isBST(BinarySearchTree<string> t) {
-    
 }
 
 
