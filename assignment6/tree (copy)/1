@@ -1,0 +1,47 @@
+template <class Comparable>
+bool BinarySearchTree<Comparable>::isBST() const {
+    return isBST(root);
+}
+
+/**
+ * Is the BST really a BST?
+ */
+template <class Comparable>
+bool BinarySearchTree<Comparable>::isBST( const BinaryNode<Comparable> * t ) const
+{
+    return isBSTUtil(t, findMin(t), findMax(t));
+}
+
+/**
+ * Utility for isBST
+ */
+template <class Comparable>
+bool BinarySearchTree<Comparable>::isBSTUtil( const BinaryNode<Comparable> * t, Comparable min, Comparable max ) const
+{
+    if (t == NULL)
+        return true;
+
+    if (t->element < min || t->element > max)
+        return false;
+
+    return isBSTUtil(t->left,min,t->element) &&
+           isBSTUtil(t->right,max,t->element);
+}
+
+
+
+    bool isBST() {
+        return isBSTUtil(root, -1,100);
+    }
+
+    bool isBSTUtil( const BinaryNode<Comparable> * t, Comparable *min, Comparable *max ) const
+    {
+        if (t == NULL)
+            return true;
+
+        if ((min != NULL && t->data < *min) || (max !=NULL && t->data > *max))
+            return false;
+
+        return (isBSTUtil(t->left,min,&(t->data)) &&
+               isBSTUtil(t->right,max,&(t->data)));
+    }
