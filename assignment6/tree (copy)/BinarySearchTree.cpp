@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+#include <math.h>
 
 using namespace std;
 
@@ -27,6 +28,23 @@ class BinarySearchTree {
         BinaryNode<Comparable> *root;
         BinarySearchTree( BinaryNode<Comparable> * rt): root(rt) { }
 
+    void printTree_inorder( ) const
+    {
+        printTree_inorder( root );
+    }
+
+    void printTree_inorder( BinaryNode<Comparable> *t ) const
+    {
+        if( t != NULL )
+        {
+            cout << " (";
+            printTree_inorder( t->left );
+            cout << t->data;
+            printTree_inorder( t->right );
+            cout << ") ";
+        }
+    }
+
     bool isBST() {
           return(isBSTUtil(root, INT_MIN, INT_MAX));
         }
@@ -42,11 +60,42 @@ class BinarySearchTree {
         isBSTUtil(t->right, t->data, max);
     } 
 
+    
+
 
 };
 
+BinaryNode<int>* balancedUtil(int x,int* ints) {
+    BinaryNode<int>* bt;
+    if (x == 1) {
+        bt = new BinaryNode<int>(ints[0],NULL,NULL);
+    }
+    else {
+        bt = new BinaryNode<int>(ints[x/2],balancedUtil(x/2,ints),balancedUtil(x/2,ints+x/2+1));
+    }
+        return bt;
+
+}
+
+BinarySearchTree<int> balanced (int k) {
+    if (k < 0) 
+        return BinarySearchTree<int>(NULL);
+    int x = pow(2,k+1) - 1;
+    int* ints;
+        for (int i = 0; i < x; i++)
+            ints[i] = i+1;
+
+    return  BinarySearchTree<int>(balancedUtil(x,ints));
+}
+
 
 int main() {
+
+    BinarySearchTree<int> bal = balanced(-1); 
+
+    bal.printTree_inorder();
+
+    cout << '\n';
 
     BinarySearchTree<int> bt
         (
@@ -102,12 +151,6 @@ int main() {
                         )
                 )
         );
-
-    cout << bt.isBST() << '\n';
-    cout << bt2.isBST() << '\n';
-  cout << bt3.isBST() << '\n';
-  cout << bt4.isBST() << '\n';
-  cout << bt5.isBST() << '\n';
 
 
 }

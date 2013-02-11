@@ -124,6 +124,11 @@ main()
     ""
     );
 
+
+    cout << isBST(bt);
+    cout << '\n';
+    cout << '\n';
+
     bt.printTree_inorder();
     cout << '\n';
     bt2.printTree_inorder();
@@ -141,6 +146,10 @@ main()
     cout << '\n';
 
 
+}
+
+bool isBST(BinarySearchTree<string> t) {
+    
 }
 
 
