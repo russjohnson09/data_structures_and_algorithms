@@ -8,6 +8,30 @@ using namespace std;
 
 void printTime(double);
 
+BinaryNode<int>* balancedUtil(int x,int* ints) {
+    BinaryNode<int>* bt;
+    if (x == 1) {
+        bt = new BinaryNode<int>(ints[0],NULL,NULL);
+    }
+    else {
+        bt = new BinaryNode<int>(ints[x/2],balancedUtil(x/2,ints),balancedUtil(x/2,ints+x/2+1));
+    }
+        return bt;
+
+}
+
+BinarySearchTree<int> balanced (int k) {
+    if (k < 0) 
+        return BinarySearchTree<int>(NULL);
+    int x = pow(2,k+1) - 1;
+    int* ints;
+        for (int i = 0; i < x; i++)
+            ints[i] = i+1;
+
+    return  BinarySearchTree<int>(balancedUtil(x,ints));
+}
+
+
 BinarySearchTree<int> balanced(int);
 
 int

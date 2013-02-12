@@ -6,17 +6,9 @@
 
 using namespace std;
 
-void printTime(double);
-
 int
 main()
 {
-
-//	clock_t t;
-//    int i;
-
-
-
     BinarySearchTree<string> bt
         (
         new BinaryNode<string>("Lee",
@@ -122,33 +114,28 @@ main()
     ""
     );
 
-
-    cout << bt7.isBST();
-    cout << '\n';
-    cout << bt.isBST();
-    cout << bt2.isBST();
-    cout << '\n';
-
     bt.printTree_inorder();
     cout << '\n';
+    cout << ((bt.isBST())?"True":"False") << '\n';
     bt2.printTree_inorder();
     cout << '\n';
+    cout << ((bt2.isBST())?"True":"False") << '\n';
     bt3.printTree_inorder();
     cout << '\n';
+    cout << ((bt3.isBST())?"True":"False") << '\n';
 
     bt4.printTree_inorder();
     cout << '\n';
+    cout << ((bt4.isBST())?"True":"False") << '\n';
     bt5.printTree_inorder();
     cout << '\n';
+    cout << ((bt5.isBST())?"True":"False") << '\n';
     bt6.printTree_inorder();
     cout << '\n';
+    cout << ((bt6.isBST())?"True":"False") << '\n';
     bt7.printTree_inorder();
     cout << '\n';
+    cout << ((bt7.isBST())?"True":"False") << '\n';
 
 
-}
-
-
-void printTime(double t) {
-   printf("Time in Seconds for 1000 executions: %lf\n",t/CLOCKS_PER_SEC);
 }

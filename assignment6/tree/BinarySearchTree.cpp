@@ -480,18 +480,25 @@ int BinarySearchTree<Comparable>::fullNodes( const BinaryNode<Comparable> * t ) 
     return 1 + fullNodes(t->left) + fullNodes(t->right);
 }
 
-
+/**
+ * Returns true if binary tree is search tree.
+ */
 template <class Comparable>
 bool BinarySearchTree<Comparable>::isBST() const {
-          return(isBSTUtil(root, NULL, NULL));
+    //use isBSTUtil with NULL pointers for max and min
+    return(isBSTUtil(root, NULL, NULL));
 }
 
 template <class Comparable>
 bool BinarySearchTree<Comparable>::isBSTUtil(BinaryNode<Comparable>* t, Comparable* min, Comparable* max) const {
+    //an empty binary tree is a search tree
     if (t==NULL)
        return true;
+    //first check if min and max are null to avoid null-pointer
+    //then check that the element is within the allowed range of values
     if ((min !=NULL && t->element < *min) || (max !=NULL && *max < t->element))
        return 0; 
+    //the left branch has a max equal to its parent and right has min equal to its parent
     return isBSTUtil(t->left, min, &(t->element)) && isBSTUtil(t->right, &(t->element), max);
 }
 
