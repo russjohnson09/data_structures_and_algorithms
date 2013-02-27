@@ -322,32 +322,22 @@ class RedBlackTree
     }
 
     void breadthFirst(RedBlackNode *t) {
-        int x = 0;
-        int y = t->y;
-        queue<RedBlackNode *> q;
-        RedBlackNode *s;
-	    q.push(t);
-	    while(!q.empty()) {
-            s = q.front();
-            if (y != s->y) {
-                --y;
-                printf("\n");
-                x=0;
+        queue<RedBlackNode*> currentLevel, nextLevel;
+        currentLevel.push(t);
+        while (!currentLevel.empty()) {
+            RedBlackNode *currNode = currentLevel.front();
+            currentLevel.pop();
+            cout << currNode->element << " ";
+            if (currNode->left != nullNode)
+                nextLevel.push(currNode->left);
+            if (currNode->right != nullNode)
+                nextLevel.push(currNode->right);
+            if (currentLevel.empty()) {
+              cout << endl;
+              swap(currentLevel, nextLevel);
             }
-            for (int i = 0; i < s->x - x; i++)
-                printf("%6s","");
-            x = s->x;
-            if (s->color == BLACK)
-                printf("[%i]",s->element);
-            else
-                printf("((%i))",s->element);
-            q.pop();
-            if (s->left != nullNode)
-                q.push(s->left);
-            if (s->right != nullNode)
-                q.push(s->right);
         }
-    }
+      }
 
 };
 
