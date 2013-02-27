@@ -1,6 +1,8 @@
 #ifndef RED_BLACK_TREE_H
 #define RED_BLACK_TREE_H
 
+#include <cstdio>
+#include <queue>
 #include "dsexceptions.h"
 #include <iostream>        // For NULL
 using namespace std;
@@ -175,6 +177,11 @@ class RedBlackTree
             assignY( header->right, 0);
     }
 
+    void breadthFirst(){
+        if( header->right != nullNode )
+            breadthFirst( header->right);
+    }
+
   private:
     struct RedBlackNode
     {
@@ -303,26 +310,40 @@ class RedBlackTree
     int assignX(RedBlackNode *t, int i) {
         t->x = (t->left == nullNode)?i:assignX(t->left,i);
         return (t->right == nullNode)?(t->x)+1:assignX(t->right,t->x+1);
-        int j;
-        if (t->left == nullNode) {
-            t->x = j = i;
-        }
-        else {
-            j = assignX(t->left, i);
-            t->x = j + 1;
-        }
-        if (t->right != nullNode)
-            j = assignX(t->right, t->x + 1);
-        return j;
     }
 
     void assignY(RedBlackNode *t, int i) {
-        t->y = i;
-        if(t->right != nullNode)
+        if (t != nullNode){
+            t->y = i;
             assignY(t->right, i-1);
-        if(t->left != nullNode)
             assignY(t->left, i-1);
+        }
 
+    }
+
+    void breadthFirst(RedBlackNode *t) {
+        int x = 0;
+        int y = t->y;
+        queue<RedBlackNode *> q;
+        RedBlackNode *s;
+	    q.push(t);
+	    while(!q.empty()) {
+            s = q.front();
+            if (y != s->y) {
+                --y;
+                printf("\n");
+                x=0;
+            }
+            for (int i = 0; i < s->x - x; i++)
+                printf("%6s","");
+            x = s->x;
+            printf("%i",s->element);
+            q.pop();
+            if (s->left != nullNode)
+                q.push(s->left);
+            if (s->right != nullNode)
+                q.push(s->right);
+        }
     }
 
 };
