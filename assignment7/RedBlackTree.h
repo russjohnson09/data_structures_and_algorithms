@@ -165,6 +165,16 @@ class RedBlackTree
         return *this;
     }
 
+    void assignX(){
+        if( header->right != nullNode )
+            assignX( header->right, 0);
+    }
+
+    void assignY(){
+        if( header->right != nullNode )
+            assignY( header->right, 0);
+    }
+
   private:
     struct RedBlackNode
     {
@@ -207,7 +217,10 @@ class RedBlackTree
         if( t != t->left )
         {
             printTree( t->left );
-            cout << t->element << endl;
+            cout << "(";
+            cout << t->element;
+            cout << ":" << t->x << ", " << t->y << ")";
+
             printTree( t->right );
         }
     }
@@ -285,6 +298,33 @@ class RedBlackTree
         k2->left = k1;
         k1 = k2;
     }
+
+
+    int assignX(RedBlackNode *t, int i) {
+        t->x = (t->left == nullNode)?i:assignX(t->left,i);
+        return (t->right == nullNode)?(t->x)+1:assignX(t->right,t->x+1);
+        int j;
+        if (t->left == nullNode) {
+            t->x = j = i;
+        }
+        else {
+            j = assignX(t->left, i);
+            t->x = j + 1;
+        }
+        if (t->right != nullNode)
+            j = assignX(t->right, t->x + 1);
+        return j;
+    }
+
+    void assignY(RedBlackNode *t, int i) {
+        t->y = i;
+        if(t->right != nullNode)
+            assignY(t->right, i-1);
+        if(t->left != nullNode)
+            assignY(t->left, i-1);
+
+    }
+
 };
 
 #endif
