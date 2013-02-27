@@ -33,6 +33,9 @@ int main(){
     r.assignX();
     r.assignY();
 
+    r.printTree();
+    printf("\n");
+
     r.breadthFirst();
 
 

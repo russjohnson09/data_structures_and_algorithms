@@ -337,7 +337,10 @@ class RedBlackTree
             for (int i = 0; i < s->x - x; i++)
                 printf("%6s","");
             x = s->x;
-            printf("%i",s->element);
+            if (s->color == BLACK)
+                printf("[%i]",s->element);
+            else
+                printf("((%i))",s->element);
             q.pop();
             if (s->left != nullNode)
                 q.push(s->left);
