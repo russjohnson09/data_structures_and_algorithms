@@ -332,18 +332,21 @@ class RedBlackTree
             if (y != s->y) {
                 --y;
                 printf("\n");
-                x=0;
+                x = 0;
             }
-            for (int i = 0; i < s->x - x; i++)
-                printf("%6s","");
+            //for (int i = 0; i < s->x - x; i++)
+            //    printf("  ");
+            printf("%*i",4*(s->x - x),s->element);
             x = s->x;
-            printf("%i",s->element);
+            //printf("%*d\n", width, value);
+            
             q.pop();
             if (s->left != nullNode)
                 q.push(s->left);
             if (s->right != nullNode)
                 q.push(s->right);
         }
+        cout << "\n";
     }
 
 
